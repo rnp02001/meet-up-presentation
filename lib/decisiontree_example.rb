@@ -2,13 +2,13 @@ require 'decisiontree'
 require 'graphr'
 require 'pry'
 
-attributes = ['Comb & Waddle', 'Tail Feathers', 'Hackle Feathers', 'Egg Shape']
+attributes = ['Comb & Wattle', 'Tail Feathers', 'Hackle Feathers', 'Egg Shape']
 training = [
   ['medium', 'straight', 'short', 'round', 'female'],
   ['small', 'straight', 'short', 'pointy', 'female'],
   ['medium', 'curved', 'long', 'pointy', 'female'],
   ['large', 'curved', 'long', 'round', 'male'],
-  ['small', 'straight', 'long', 'round', 'female'],
+  ['small', 'straight', 'short', 'round', 'female'],
   ['large', 'curved', 'long', 'round', 'male'],
   ['small', 'straight', 'short', 'round', 'female'],
   ['medium', 'curved', 'long', 'pointy', 'male'],
@@ -19,7 +19,7 @@ training = [
 ]
 
 
-# Instantiate the tree, and train it based on the data (set default to '1')
+# Instantiate the tree, and train it based on the data (set default to 'female')
 dec_tree = DecisionTree::ID3Tree.new(attributes, training, 'female', :discrete)
 dec_tree.train
 
